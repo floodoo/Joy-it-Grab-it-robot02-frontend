@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:robo_app/core/services/services.dart';
+import 'package:robo_app/ui/screens/widgets/control_slider.dart';
 
 class HomeScreen extends HookWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,12 +15,7 @@ class HomeScreen extends HookWidget {
         title: const Text("Joy-it-Grab-it-robot02"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('...', style: _theme.data.textTheme.subtitle2),
-          ],
-        ),
+        child: const ControlSlider()
       ),
     );
   }

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.joy_it_grab_it_robot02">
    <application
-        android:label="joy_it_grab_it_robot02"
+        android:label="Joy-it-Grab-it-robot02"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
