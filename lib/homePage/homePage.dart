@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
 
   void checkConnection() async {
     try {
-      var response = await http.get(Uri.encodeFull("http://robopi:5000/servo"),
+      var response = await http.get(Uri.parse("http://robopi:5000/servo"),
           headers: {"Accept": "application/json"});
       print("GET Status: ${response.statusCode}");
     } catch (e) {
@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
 
   void putJsonData() {
     String jsonStr = jsonEncode(jsonMap);
-    http.put(Uri.encodeFull(url),
+    http.put(Uri.parse(url),
         body: jsonStr,
         headers: {"Content-Type": "application/json"}).then((result) {
       print("PUT Status: ${result.statusCode}");

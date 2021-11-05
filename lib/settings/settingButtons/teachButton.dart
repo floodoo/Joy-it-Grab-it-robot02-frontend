@@ -34,9 +34,7 @@ class _TeachButtonState extends State<TeachButton> {
 
   void putJsonData() {
     String jsonStr = jsonEncode(jsonMap);
-    http.put(Uri.encodeFull(url),
-        body: jsonStr,
-        headers: {"Content-Type": "application/json"}).then((result) {
+    http.put(Uri.parse(url), body: jsonStr, headers: {"Content-Type": "application/json"}).then((result) {
       print("PUT Status: ${result.statusCode}");
     });
   }

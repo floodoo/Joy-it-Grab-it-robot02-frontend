@@ -22,7 +22,7 @@ class ControlSlider extends StatefulWidget {
 
   void putJsonData() {
     String jsonStr = jsonEncode(jsonMap);
-    http.put(Uri.encodeFull(url),
+    http.put(Uri.parse(url),
         body: jsonStr,
         headers: {"Content-Type": "application/json"}).then((result) {
       print("PUT Status: ${result.statusCode}");
@@ -48,7 +48,7 @@ class _ControlSliderState extends State<ControlSlider> {
 
   void getJsonData() async {
     try {
-      var response = await http.get(Uri.encodeFull(widget.url),
+      var response = await http.get(Uri.parse(widget.url),
           headers: {"Accept": "application/json"});
 
       var convertDataToJson = json.decode(response.body);
@@ -67,7 +67,7 @@ class _ControlSliderState extends State<ControlSlider> {
 
   void putJsonData() {
     String jsonStr = jsonEncode(widget.jsonMap);
-    http.put(Uri.encodeFull(widget.url),
+    http.put(Uri.parse(widget.url),
         body: jsonStr,
         headers: {"Content-Type": "application/json"}).then((result) {
       print("PUT Status: ${result.statusCode}");

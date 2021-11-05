@@ -15,7 +15,7 @@ class ResetTeachButton extends StatelessWidget {
 
   void putJsonData() {
     String jsonStr = jsonEncode(jsonMap);
-    http.put(Uri.encodeFull(url),
+    http.put(Uri.parse(url),
         body: jsonStr,
         headers: {"Content-Type": "application/json"}).then((result) {
       print("PUT Status: ${result.statusCode}");
