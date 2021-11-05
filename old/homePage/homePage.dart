@@ -5,8 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:robo_app/HomePage/noConnection.dart';
 import 'package:robo_app/HomePage/slider.dart';
-import 'package:robo_app/settings/settingsPage.dart';
 import 'package:http/http.dart' as http;
+import 'package:robo_app/old/settings/settingsPage.dart';
 
 class HomePage extends StatefulWidget {
   @override

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:robo_app/settings/settingButtons/exampleSequence.dart';
-import 'package:robo_app/settings/settingButtons/infoButton.dart';
-import 'package:robo_app/settings/settingButtons/resetTeachButton.dart';
-import 'package:robo_app/settings/settingButtons/syncButton.dart';
-import 'package:robo_app/settings/settingButtons/teachButton.dart';
-import 'package:robo_app/settings/settingsTopicText/otherText.dart';
-import 'package:robo_app/settings/settingsTopicText/teachText.dart';
+import 'package:robo_app/old/settings/settingButtons/exampleSequence.dart';
+import 'package:robo_app/old/settings/settingButtons/infoButton.dart';
+import 'package:robo_app/old/settings/settingButtons/resetTeachButton.dart';
+import 'package:robo_app/old/settings/settingButtons/syncButton.dart';
+import 'package:robo_app/old/settings/settingButtons/teachButton.dart';
+import 'package:robo_app/old/settings/settingsTopicText/otherText.dart';
+import 'package:robo_app/old/settings/settingsTopicText/teachText.dart';
 
 class SettingsPage extends StatelessWidget {
   @override
