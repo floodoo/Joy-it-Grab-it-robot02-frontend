@@ -4,7 +4,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:robo_app/core/services/services.dart';
 
 class ControlSlider extends StatefulHookWidget {
-  const ControlSlider({Key? key}) : super(key: key);
+  ControlSlider({required this.label, Key? key}) : super(key: key);
+
+  String label;
 
   @override
   _ControlSliderState createState() => _ControlSliderState();
@@ -26,10 +28,10 @@ class _ControlSliderState extends State<ControlSlider> {
           color: _theme.colors.primary,
           child: Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 5),
+              Padding(
+                padding: const EdgeInsets.only(top: 5),
                 child: Text(
-                  "widget.name",
+                  widget.label,
                   softWrap: false,
                   overflow: TextOverflow.fade,
                 ),
