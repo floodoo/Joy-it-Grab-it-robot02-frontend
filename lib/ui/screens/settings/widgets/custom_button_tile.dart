@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:robo_app/core/services/services.dart';
+
+class CustomButtonTile extends StatefulHookWidget {
+  CustomButtonTile({
+    required this.label,
+    required this.icon,
+    required this.onPressed,
+    Key? key,
+  }) : super(key: key);
+
+  String label;
+  Icon icon;
+  Function() onPressed;
+
+  @override
+  _CustomButtonTileState createState() => _CustomButtonTileState();
+}
+
+class _CustomButtonTileState extends State<CustomButtonTile> {
+  final _theme = useProvider(themeService).theme;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(15),
+      child: Card(
+        color: _theme.colors.primary,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: ListTile(
+          leading: widget.icon,
+          title: Text(widget.label),
+          onTap: widget.onPressed,
+        ),
+      ),
+    );
+  }
+}

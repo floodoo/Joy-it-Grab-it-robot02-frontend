@@ -17,7 +17,7 @@ class _ControlSliderState extends State<ControlSlider> {
 
   @override
   Widget build(BuildContext context) {
-    var _theme = useProvider(themeService).theme;
+    final _theme = useProvider(themeService).theme;
 
     return Column(
       children: [
