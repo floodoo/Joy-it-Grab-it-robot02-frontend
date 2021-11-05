@@ -20,10 +20,10 @@ class CustomButtonTile extends StatefulHookWidget {
 }
 
 class _CustomButtonTileState extends State<CustomButtonTile> {
-  final _theme = useProvider(themeService).theme;
-
   @override
   Widget build(BuildContext context) {
+    final _theme = useProvider(themeService).theme;
+
     return Padding(
       padding: const EdgeInsets.all(15),
       child: Card(
@@ -33,7 +33,12 @@ class _CustomButtonTileState extends State<CustomButtonTile> {
         ),
         child: ListTile(
           leading: widget.icon,
-          title: Text(widget.label),
+          title: Text(
+            widget.label,
+            maxLines: 1,
+            softWrap: false,
+            overflow: TextOverflow.ellipsis,
+          ),
           onTap: widget.onPressed,
         ),
       ),
