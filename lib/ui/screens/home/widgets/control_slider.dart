@@ -18,6 +18,16 @@ class _ControlSliderState extends State<ControlSlider> {
   double sliderValue = 0.0;
 
   @override
+  void initState() {
+    Servo(widget.id).getPos().then((double pos) {
+      setState(() {
+        sliderValue = pos;
+      });
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final _theme = useProvider(themeService).theme;
     int afterMovementMillisecondsSinceEpoch = 85;
@@ -54,7 +64,7 @@ class _ControlSliderState extends State<ControlSlider> {
                   if (difference > 80 || differenceSliderValue > 500 || differenceSliderValue < -500) {
                     afterMovementMillisecondsSinceEpoch = DateTime.now().millisecondsSinceEpoch;
                     lastSliderValue = sliderValue;
-                    Servo(widget.id).setPosition(sliderValue);
+                    Servo(widget.id).setPos(sliderValue);
                   }
                 },
               )

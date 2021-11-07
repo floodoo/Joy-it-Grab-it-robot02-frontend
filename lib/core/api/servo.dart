@@ -8,22 +8,22 @@ class Servo {
   String basicUrl = "http://robopi:5000/servo";
   final log = Logger();
 
-  Future<double> getPosition() async {
+  Future<double> getPos() async {
     try {
-      http.Response response = await http.get(Uri.parse(basicUrl), headers: {"Accept": "application/json"});
-      if (response.statusCode == 200) {
-        Map data = json.decode(response.body);
-        return data["servos"][id]["pos"];
-      }
+    http.Response response = await http.get(Uri.parse(basicUrl), headers: {"Accept": "application/json"});
+    if (response.statusCode == 200) {
+      Map data = json.decode(response.body);
+      return data["servos"][id]["pos"].toDouble();
+    }
 
-      return 0.0;
+    return 0.0;
     } catch (e) {
       log.e("Error getting position $e");
       return 0.0;
     }
   }
 
-  void setPosition(double pos) async {
+  void setPos(double pos) async {
     try {
       http.Response response = await http.put(
         Uri.parse(basicUrl),
