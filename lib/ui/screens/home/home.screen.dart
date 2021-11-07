@@ -22,7 +22,7 @@ class HomeScreen extends HookWidget {
       body: ListView.builder(
         itemCount: 6,
         itemBuilder: (BuildContext context, int index) {
-          return ControlSlider(label: index.toString());
+          return ControlSlider(id: index, label: index.toString());
         },
       ),
     );
