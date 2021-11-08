@@ -54,6 +54,8 @@ class _ControlSliderState extends State<ControlSlider> {
                 value: sliderValue,
                 min: -1000,
                 max: 1000,
+                thumbColor: _theme.colors.accent,
+                activeColor: _theme.colors.accent,
                 onChanged: (double newSliderValue) async {
                   setState(() {
                     sliderValue = newSliderValue;

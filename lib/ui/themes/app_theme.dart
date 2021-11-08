@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:robo_app/ui/themes/app_colors.dart';
+import 'package:robo_app/ui/themes/dark.theme.dart';
+import 'package:robo_app/ui/themes/light.theme.dart';
 
-import 'app_colors.dart';
-import 'dark.theme.dart';
-import 'light.theme.dart';
 
 class AppTheme {
   AppTheme({required this.data, required this.mode, required this.colors});
