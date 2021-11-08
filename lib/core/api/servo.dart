@@ -10,13 +10,13 @@ class Servo {
 
   Future<double> getPos() async {
     try {
-    http.Response response = await http.get(Uri.parse(basicUrl), headers: {"Accept": "application/json"});
-    if (response.statusCode == 200) {
-      Map data = json.decode(response.body);
-      return data["servos"][id]["pos"].toDouble();
-    }
+      http.Response response = await http.get(Uri.parse(basicUrl), headers: {"Accept": "application/json"});
+      if (response.statusCode == 200) {
+        Map data = json.decode(response.body);
+        return data["servos"][id]["pos"].toDouble();
+      }
 
-    return 0.0;
+      return 0.0;
     } catch (e) {
       log.e("Error getting position $e");
       return 0.0;
@@ -43,5 +43,9 @@ class Servo {
     } catch (e) {
       log.e("Error setting position $e");
     }
+  }
+
+  void reset() {
+    setPos(0.0);
   }
 }
