@@ -14,57 +14,61 @@ class SettingsScreen extends HookWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: Text(
+          'Settings',
+          style: TextStyle(color: _theme.colors.accent),
+        ),
+        backgroundColor: _theme.colors.primary,
       ),
       body: Container(
-        color: _theme.colors.primary,
+        color: _theme.colors.accent,
         height: double.infinity,
         child: SingleChildScrollView(
           child: Center(
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(top: 15),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15),
                   child: Text(
                     "Teaching",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20, color: _theme.colors.primary),
                   ),
                 ),
                 CustomButtonTile(
                   label: "Teache me!",
-                  icon: const Icon(Icons.school),
+                  icon: Icons.school,
                   onPressed: () {},
                 ),
                 CustomButtonTile(
                   label: "Reset Teaching",
-                  icon: const Icon(Icons.restore),
+                  icon: Icons.restore,
                   onPressed: () {},
                 ),
                 CustomButtonTile(
                   label: "Example Sequence",
-                  icon: const Icon(Icons.crop_din),
+                  icon: Icons.crop_din,
                   onPressed: () {},
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 15),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15),
                   child: Text(
                     "Other",
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20, color: _theme.colors.primary),
                   ),
                 ),
                 CustomButtonTile(
                   label: "Sync",
-                  icon: const Icon(Icons.autorenew),
+                  icon: Icons.autorenew,
                   onPressed: () {},
                 ),
                 CustomButtonTile(
                   label: "IP adress",
-                  icon: const Icon(Icons.location_searching),
+                  icon: Icons.location_searching,
                   onPressed: () {},
                 ),
                 CustomButtonTile(
                   label: "Github repo",
-                  icon: const Icon(Icons.info),
+                  icon: Icons.info,
                   onPressed: () {},
                 ),
               ],

@@ -12,7 +12,7 @@ class CustomButtonTile extends StatefulHookWidget {
   }) : super(key: key);
 
   String label;
-  Icon icon;
+  IconData icon;
   Function() onPressed;
 
   @override
@@ -32,9 +32,10 @@ class _CustomButtonTileState extends State<CustomButtonTile> {
           borderRadius: BorderRadius.circular(10),
         ),
         child: ListTile(
-          leading: widget.icon,
+          leading: Icon(widget.icon, color: _theme.colors.accent),
           title: Text(
             widget.label,
+            style: TextStyle(color: _theme.colors.accent),
             maxLines: 1,
             softWrap: false,
             overflow: TextOverflow.ellipsis,
