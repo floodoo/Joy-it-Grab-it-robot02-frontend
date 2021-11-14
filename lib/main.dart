@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:robo_app/core/services/services.dart';
@@ -9,8 +10,10 @@ import 'package:robo_app/ui/screens/settings/settings.screen.dart';
 void main() {
   Logger.level = Level.debug;
   runApp(
-    const ProviderScope(
-      child: MyApp(),
+    ProviderScope(
+      child: Phoenix(
+        child: const MyApp(),
+      ),
     ),
   );
 }
