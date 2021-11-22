@@ -31,7 +31,7 @@ class HomeScreen extends HookWidget {
             tooltip: "Reset servos",
             onPressed: () {
               for (int i = 0; i < 6; i++) {
-                Servo(i).reset();
+                Servo(i).resetPos();
               }
               Phoenix.rebirth(context);
             },

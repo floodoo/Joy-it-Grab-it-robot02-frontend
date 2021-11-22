@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:robo_app/core/api/servo.dart';
 import 'package:robo_app/core/services/services.dart';
 import 'package:robo_app/ui/screens/settings/widgets/custom_button_tile.dart';
 
@@ -11,6 +12,8 @@ class SettingsScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final _theme = useProvider(themeService).theme;
+    Servo servo = Servo(0);
+    bool isTeaching = false;
 
     return Scaffold(
       appBar: AppBar(
@@ -37,17 +40,17 @@ class SettingsScreen extends HookWidget {
                 CustomButtonTile(
                   label: "Teache me!",
                   icon: Icons.school,
-                  onPressed: () {},
+                  onPressed: () => servo.teaching(isTeaching),
                 ),
                 CustomButtonTile(
                   label: "Reset Teaching",
                   icon: Icons.restore,
-                  onPressed: () {},
+                  onPressed: () => servo.resetTeaching(),
                 ),
                 CustomButtonTile(
                   label: "Example Sequence",
                   icon: Icons.crop_din,
-                  onPressed: () {},
+                  onPressed: () => servo.exampleSequence(),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 15),
