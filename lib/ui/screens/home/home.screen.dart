@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
@@ -14,6 +16,7 @@ class HomeScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final _theme = useProvider(themeService).theme;
+    final _teaching = useProvider(teachingService);
 
     return Scaffold(
       appBar: AppBar(
@@ -23,6 +26,15 @@ class HomeScreen extends HookWidget {
         ),
         backgroundColor: _theme.colors.primary,
         actions: [
+          IconButton(
+            onPressed: () {
+              _teaching.run();
+            },
+            icon: Icon(
+              Icons.play_arrow,
+              color: _theme.colors.accent,
+            ),
+          ),
           IconButton(
             icon: Icon(
               Icons.refresh,

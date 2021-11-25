@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:logger/logger.dart';
 import 'package:robo_app/core/api/servo.dart';
 import 'package:robo_app/core/services/services.dart';
 
@@ -31,7 +34,34 @@ class _ControlSliderState extends State<ControlSlider> {
   Widget build(BuildContext context) {
     final _theme = useProvider(themeService).theme;
     int afterMovementMillisecondsSinceEpoch = 85;
-    double lastSliderValue = 0.0;
+    double lastSliderValue = 1.0;
+    Timer? timer;
+    final _log = Logger();
+
+    if (useProvider(teachingService).isRunning) {
+      _log.d("Timer started");
+      timer = Timer.periodic(const Duration(milliseconds: 500), (Timer t) {
+        Servo(widget.id).getPos().then((double pos) {
+          setState(() {
+            sliderValue = pos;
+          });
+        });
+
+        double differenceSliderValue = sliderValue - lastSliderValue;
+        lastSliderValue = sliderValue;
+
+        if (differenceSliderValue != 0.0) {
+          afterMovementMillisecondsSinceEpoch = DateTime.now().millisecondsSinceEpoch;
+        }
+
+        int difference = DateTime.now().millisecondsSinceEpoch - afterMovementMillisecondsSinceEpoch;
+
+        if (differenceSliderValue == 0.0 && difference > 5000) {
+          timer!.cancel();
+          _log.d("Timer stopped");
+        }
+      });
+    }
 
     return Column(
       children: [
