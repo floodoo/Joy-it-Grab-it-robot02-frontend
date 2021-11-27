@@ -3,17 +3,20 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class TeachingService with ChangeNotifier {
-  String basicUrl = "http://robopi:5000/servo";
   final log = Logger();
+  String basicUrl = "http://robopi:5000/servo";
+
   bool isTeaching = false;
   bool isRunning = false;
 
   void teaching() async {
     try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
       http.Response response = await http.put(
-        Uri.parse(basicUrl),
+        Uri.parse(prefs.getString("url") ?? basicUrl),
         headers: {"Content-Type": "application/json"},
         body: json.encode(
           {
@@ -41,9 +44,11 @@ class TeachingService with ChangeNotifier {
   void run() async {
     isRunning = true;
     notifyListeners();
+
     try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
       http.Response response = await http.put(
-        Uri.parse(basicUrl),
+        Uri.parse(prefs.getString("url") ?? basicUrl),
         headers: {"Content-Type": "application/json"},
         body: json.encode(
           {
@@ -71,8 +76,9 @@ class TeachingService with ChangeNotifier {
 
   void reset() async {
     try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
       http.Response response = await http.put(
-        Uri.parse(basicUrl),
+        Uri.parse(prefs.getString("url") ?? basicUrl),
         headers: {"Content-Type": "application/json"},
         body: json.encode(
           {
@@ -98,8 +104,9 @@ class TeachingService with ChangeNotifier {
 
   void exampleSequence() async {
     try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
       http.Response response = await http.put(
-        Uri.parse(basicUrl),
+        Uri.parse(prefs.getString("url") ?? basicUrl),
         headers: {"Content-Type": "application/json"},
         body: json.encode(
           {
