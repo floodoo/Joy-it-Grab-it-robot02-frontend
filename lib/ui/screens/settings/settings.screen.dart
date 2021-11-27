@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:robo_app/core/services/services.dart';
 import 'package:robo_app/ui/screens/settings/widgets/custom_button_tile.dart';
+import 'package:robo_app/ui/screens/settings/widgets/url_dialog.dart';
 
 class SettingsScreen extends HookWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -69,9 +70,16 @@ class SettingsScreen extends HookWidget {
                   onPressed: () {},
                 ),
                 CustomButtonTile(
-                  label: "IP adress",
+                  label: "Change URL",
                   icon: Icons.location_searching,
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return const URLDialog();
+                      },
+                    );
+                  },
                 ),
                 CustomButtonTile(
                   label: "Github repo",

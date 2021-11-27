@@ -16,6 +16,7 @@ dependencies:
   hooks_riverpod: ^0.14.0+4
   http: ^0.13.4
   logger: ^1.1.0
+  shared_preferences: ^2.0.9
 
 dev_dependencies:
   flutter_launcher_icons: ^0.9.2

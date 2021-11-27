@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
@@ -9,10 +7,15 @@ import 'package:robo_app/core/services/services.dart';
 import 'package:robo_app/ui/screens/home/widgets/control_slider.dart';
 import 'package:robo_app/ui/screens/settings/settings.screen.dart';
 
-class HomeScreen extends HookWidget {
+class HomeScreen extends StatefulHookWidget {
   const HomeScreen({Key? key}) : super(key: key);
   static final routeName = (HomeScreen).toString();
 
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final _theme = useProvider(themeService).theme;
