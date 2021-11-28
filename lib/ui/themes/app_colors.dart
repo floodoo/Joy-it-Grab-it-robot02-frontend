@@ -21,9 +21,9 @@ class AppColors {
 
   factory AppColors.dark() {
     return const AppColors(
-      background: Colors.black,
-      primary: Colors.cyan,
-      accent: Colors.green,
+      background: Colors.white,
+      primary: Colors.orange,
+      accent: Colors.black87,
     );
   }
 }
