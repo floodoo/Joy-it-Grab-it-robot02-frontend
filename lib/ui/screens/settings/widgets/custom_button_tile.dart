@@ -4,16 +4,16 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:robo_app/core/services/services.dart';
 
 class CustomButtonTile extends StatefulHookWidget {
-  CustomButtonTile({
+  const CustomButtonTile({
     required this.label,
     required this.icon,
     required this.onPressed,
     Key? key,
   }) : super(key: key);
 
-  String label;
-  IconData icon;
-  Function() onPressed;
+  final String label;
+  final IconData icon;
+  final Function() onPressed;
 
   @override
   _CustomButtonTileState createState() => _CustomButtonTileState();

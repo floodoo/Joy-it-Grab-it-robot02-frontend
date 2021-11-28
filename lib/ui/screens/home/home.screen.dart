@@ -30,14 +30,14 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: _theme.colors.primary,
         actions: [
           IconButton(
-            onPressed: () {
-              _teaching.run();
-            },
-            tooltip: "Run",
             icon: Icon(
               Icons.play_arrow,
               color: _theme.colors.accent,
             ),
+            tooltip: "Run",
+            onPressed: () {
+              _teaching.run();
+            },
           ),
           IconButton(
             icon: Icon(

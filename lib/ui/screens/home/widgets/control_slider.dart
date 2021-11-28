@@ -90,6 +90,7 @@ class _ControlSliderState extends State<ControlSlider> {
                   setState(() {
                     sliderValue = newSliderValue;
                   });
+
                   int difference = DateTime.now().millisecondsSinceEpoch - afterMovementMillisecondsSinceEpoch;
                   double differenceSliderValue = sliderValue - lastSliderValue;
 
