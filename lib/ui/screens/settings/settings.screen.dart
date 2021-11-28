@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:robo_app/core/services/services.dart';
 import 'package:robo_app/ui/screens/settings/widgets/custom_button_tile.dart';
 import 'package:robo_app/ui/screens/settings/widgets/url_dialog.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends HookWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -65,11 +66,6 @@ class SettingsScreen extends HookWidget {
                   ),
                 ),
                 CustomButtonTile(
-                  label: "Sync",
-                  icon: Icons.autorenew,
-                  onPressed: () {},
-                ),
-                CustomButtonTile(
                   label: "Change URL",
                   icon: Icons.location_searching,
                   onPressed: () {
@@ -84,7 +80,20 @@ class SettingsScreen extends HookWidget {
                 CustomButtonTile(
                   label: "Github repo",
                   icon: Icons.info,
-                  onPressed: () {},
+                  onPressed: () async {
+                    await launch(
+                      "https://github.com/floodoo/Joy-it-Grab-it-robot02-frontend",
+                    );
+                  },
+                ),
+                CustomButtonTile(
+                  label: "Github repo backend",
+                  icon: Icons.info,
+                  onPressed: () async {
+                    await launch(
+                      "https://github.com/floodoo/Joy-it-Grab-it-robot02-backend",
+                    );
+                  },
                 ),
               ],
             ),
