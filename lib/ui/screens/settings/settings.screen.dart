@@ -22,6 +22,7 @@ class SettingsScreen extends HookWidget {
           style: TextStyle(color: _theme.colors.accent),
         ),
         backgroundColor: _theme.colors.primary,
+        iconTheme: IconThemeData(color: _theme.colors.accent),
       ),
       body: Container(
         color: _theme.colors.accent,
