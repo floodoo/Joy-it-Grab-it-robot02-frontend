@@ -6,9 +6,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 class Servo {
   Servo(this.id);
   final log = Logger();
+  String basicUrl = "http://robopi:5000/servo";
 
   int id;
-  String basicUrl = "http://robopi:5000/servo";
 
   Future<double> getPos() async {
     try {

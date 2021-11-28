@@ -33,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               _teaching.run();
             },
+            tooltip: "Run",
             icon: Icon(
               Icons.play_arrow,
               color: _theme.colors.accent,

@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -8,10 +7,10 @@ import 'package:robo_app/core/api/servo.dart';
 import 'package:robo_app/core/services/services.dart';
 
 class ControlSlider extends StatefulHookWidget {
-  ControlSlider({required this.id, required this.label, Key? key}) : super(key: key);
+  const ControlSlider({required this.id, required this.label, Key? key}) : super(key: key);
 
-  String label;
-  int id;
+  final String label;
+  final int id;
 
   @override
   _ControlSliderState createState() => _ControlSliderState();
@@ -33,10 +32,11 @@ class _ControlSliderState extends State<ControlSlider> {
   @override
   Widget build(BuildContext context) {
     final _theme = useProvider(themeService).theme;
+    final _log = Logger();
+    Timer? timer;
+
     int afterMovementMillisecondsSinceEpoch = 85;
     double lastSliderValue = 1.0;
-    Timer? timer;
-    final _log = Logger();
 
     if (useProvider(teachingService).isRunning) {
       _log.d("Timer started");
