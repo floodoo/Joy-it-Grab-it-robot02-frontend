@@ -50,12 +50,12 @@ class SettingsScreen extends HookWidget {
                   },
                 ),
                 CustomButtonTile(
-                  label: "Reset Teaching",
+                  label: "Reset teaching",
                   icon: Icons.restore,
                   onPressed: () => _teaching.reset(),
                 ),
                 CustomButtonTile(
-                  label: "Example Sequence",
+                  label: "Example sequence",
                   icon: Icons.crop_din,
                   onPressed: () => _teaching.exampleSequence(),
                 ),
