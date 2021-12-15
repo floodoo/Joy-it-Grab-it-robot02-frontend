@@ -8,4 +8,4 @@ Follow the [flask server installation instructions](https://github.com/floodoo/J
 
 ### Select your API endpoint
 Select your API endpoint in the settings page.
-![Screenshot of settings page](Joy-it-Grab-it-robot02-frontend/blob/main/assets/images/settings_page_change_url.png?raw=true)
+![Screenshot of settings page](https://github.com/floodoo/Joy-it-Grab-it-robot02-frontend/blob/main/assets/images/settings_page_change_url.png?raw=true)
