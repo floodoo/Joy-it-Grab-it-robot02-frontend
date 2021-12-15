@@ -27,6 +27,7 @@ class MyApp extends HookWidget {
     return MaterialApp(
       title: "Joy-it-Grab-it-robot02",
       theme: _theme.data,
+      debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => const HomeScreen(),
