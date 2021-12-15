@@ -67,7 +67,7 @@ class SettingsScreen extends HookWidget {
                   ),
                 ),
                 CustomButtonTile(
-                  label: "Change URL",
+                  label: "Change API endpoint",
                   icon: Icons.location_searching,
                   onPressed: () {
                     showDialog(
