@@ -4,7 +4,7 @@ An app that controls the [GRAB-IT Robot 02](https://joy-it.net/de/products/Robot
 ## Installation
 
 ### Install my python flask server
-Follow the [server installation guide](https://github.com/floodoo/Joy-it-Grab-it-robot02-backend).
+Follow the [server installation guide](https://github.com/floodoo/Joy-it-Grab-it-robot02-backend#installation).
 
 ### App installation
 #### Android
