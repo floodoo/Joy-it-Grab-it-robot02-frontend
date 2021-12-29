@@ -1,11 +1,15 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:logger/logger.dart';
 import 'package:robo_app/core/api/servo.dart';
 import 'package:robo_app/core/services/services.dart';
 import 'package:robo_app/ui/screens/home/widgets/control_slider.dart';
 import 'package:robo_app/ui/screens/settings/settings.screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulHookWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -16,6 +20,38 @@ class HomeScreen extends StatefulHookWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final log = Logger();
+
+  @override
+  void initState() {
+    super.initState();
+    checkServerConnection();
+  }
+
+  // Check if server connection is available. If not, show dialog.
+  Future<void> checkServerConnection() async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await http.get(Uri.parse(prefs.getString("url") ?? "http://robopi:5000/servo"),
+          headers: {"Accept": "application/json"});
+    } catch (e) {
+      log.w("Server not found");
+      AwesomeDialog(
+        context: context,
+        headerAnimationLoop: false,
+        dialogType: DialogType.WARNING,
+        animType: AnimType.SCALE,
+        title: "Server not found",
+        desc: "Change API endpoint in settings or check your robot",
+        btnCancelOnPress: () {
+          Phoenix.rebirth(context);
+        },
+        btnCancelText: "Reload",
+        btnOkOnPress: () => Navigator.pushNamed(context, SettingsScreen.routeName),
+      ).show();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final _theme = useProvider(themeService).theme;
@@ -24,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Joy-it-Grab-it-robot02",
+          "Robot control",
           style: TextStyle(color: _theme.colors.accent),
         ),
         backgroundColor: _theme.colors.primary,

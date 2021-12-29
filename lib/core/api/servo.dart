@@ -24,7 +24,6 @@ class Servo {
 
       return 0.0;
     } catch (e) {
-      log.e("Error getting position $e");
       return 0.0;
     }
   }
@@ -52,6 +51,7 @@ class Servo {
       log.e("Error setting position $e");
     }
   }
+
   /// Resets the servo to its default position
   void resetPos() {
     setPos(0.0);
