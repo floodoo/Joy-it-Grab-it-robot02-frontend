@@ -3,8 +3,8 @@ An app that controls the [GRAB-IT Robot 02](https://joy-it.net/de/products/Robot
 
 ## Installation
 
-### Install the flask server
-Follow the [flask server installation instructions](https://github.com/floodoo/Joy-it-Grab-it-robot02-backend).
+### Install my python flask server
+Follow the [server installation guide](https://github.com/floodoo/Joy-it-Grab-it-robot02-backend).
 
 ### Select your API endpoint
 Select your API endpoint in the settings page.
