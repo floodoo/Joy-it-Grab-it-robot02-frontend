@@ -30,12 +30,14 @@ With the "Start teaching" button you can teach the robot a sequence of movements
 Then you have saved a part of the sequence. You can repeat this process as often as you like.
 If your sequence is finished, you can execute it by pressing the "Execute" button on the home page.
 
+#### Reset teaching
 With the "Reset teaching" button you can reset the learned sequence. So you can start over.
 
-With the "Example sequence" button you can see an example sequence, which is already learned. It moves a tiny object from the left to the right side.
+#### Example sequence
+With the "Example sequence" button you can see an example sequence, which is already learned. It moves a tiny object from the right to the left side. [Example video](https://youtu.be/DA7x8Jc-tic?t=34).
 
 <img src="https://github.com/floodoo/Joy-it-Grab-it-robot02-frontend/blob/main/assets/images/settings_teaching.png?raw=true" width="300">
 
 ## Customize the app
 ### Add or remove slider
-You can increase or decrease the number of sliders by editing the `itemCount` number in the [home.screen.dart](lib/ui/screens/home/home.screen.dart) file
+You can increase or decrease the number of sliders by editing the `itemCount` number in the [home.screen.dart](lib/ui/screens/home/home.screen.dart) file.
