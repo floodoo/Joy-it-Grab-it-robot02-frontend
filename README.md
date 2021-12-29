@@ -6,11 +6,19 @@ An app that controls the [GRAB-IT Robot 02](https://joy-it.net/de/products/Robot
 ### Install my python flask server
 Follow the [server installation guide](https://github.com/floodoo/Joy-it-Grab-it-robot02-backend).
 
+### App installation
+#### Android
+Go to the [installation](installation_files/Joy-it-Grab-it-robot02.apk) folder and send the apk to your android phone. After that install the APK and launch it.
+
+#### iOS
+Unfortunately I can not build an iOS app, because the device must have a developer certificate. But you can do it. You have to install Flutter and then connect your phone to your computer/laptop. After that you can run the code and flutter is going to build the app on your device. One disadvantage is that if you don't have a developer certificate, you can only use the app when your phone is connected to your computer/laptop.
+
 ### Select your API endpoint
 Select your API endpoint in the settings page.
 
 <img src="https://github.com/floodoo/Joy-it-Grab-it-robot02-frontend/blob/main/assets/images/settings_page_change_api_endpoint.png?raw=true" width="300">
 
+## How to use the app
 ### Control your servos
 You can control the servos via 6 sliders by moving them to the left or right.
 
