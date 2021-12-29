@@ -1,5 +1,5 @@
 # Joy-it-Grab-it-robot02
-An app to control the [GRAB-IT Robot 02](https://joy-it.net/de/products/Robot02) with my [flask server](https://github.com/floodoo/Joy-it-Grab-it-robot02-backend).
+An app that controls the [GRAB-IT Robot 02](https://joy-it.net/de/products/Robot02) with my [flask server](https://github.com/floodoo/Joy-it-Grab-it-robot02-backend).
 
 ## Installation
 
