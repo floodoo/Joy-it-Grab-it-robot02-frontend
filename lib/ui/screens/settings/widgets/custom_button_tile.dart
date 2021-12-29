@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:robo_app/core/services/services.dart';
 
+/// Button Tile to display Text and Icons
 class CustomButtonTile extends StatefulHookWidget {
   const CustomButtonTile({
     required this.label,

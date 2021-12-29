@@ -38,6 +38,8 @@ class SettingsScreen extends HookWidget {
                     style: TextStyle(fontSize: 20, color: _theme.colors.primary),
                   ),
                 ),
+                // Switch to enable teaching mode. When enabled, change some slider values and press the button again
+                //to send the new value to the robot. You can teach him as many sequences as you want.
                 CustomButtonTile(
                   label: (_teaching.isTeaching) ? "Stop teaching" : "Start teaching",
                   icon: Icons.school,
@@ -54,6 +56,9 @@ class SettingsScreen extends HookWidget {
                   icon: Icons.restore,
                   onPressed: () => _teaching.reset(),
                 ),
+                // Run an example sequence, that resets every slider to their default value and then
+                // picks up a tiny object and moves it to the other side.
+                // Example video: https://youtu.be/DA7x8Jc-tic?t=34
                 CustomButtonTile(
                   label: "Example sequence",
                   icon: Icons.crop_din,

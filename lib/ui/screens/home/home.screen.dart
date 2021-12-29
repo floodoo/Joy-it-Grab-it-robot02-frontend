@@ -34,11 +34,13 @@ class _HomeScreenState extends State<HomeScreen> {
               Icons.play_arrow,
               color: _theme.colors.accent,
             ),
-            tooltip: "Run",
+            tooltip: "Run teach mode",
             onPressed: () {
               _teaching.run();
             },
           ),
+
+          // Reset each servo to the default position
           IconButton(
             icon: Icon(
               Icons.refresh,
@@ -64,6 +66,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Container(
         color: _theme.colors.accent,
+
+        // Build for each servo a slider (if you have more than 6 servos, you can increase the itemCount number)
         child: ListView.builder(
           itemCount: 6,
           itemBuilder: (BuildContext context, int index) {

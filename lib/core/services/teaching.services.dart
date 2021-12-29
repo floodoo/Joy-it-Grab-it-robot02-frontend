@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// Teaching class to teach and run the teaching process
 class TeachingService with ChangeNotifier {
   final log = Logger();
   String basicUrl = "http://robopi:5000/servo";
@@ -11,6 +12,7 @@ class TeachingService with ChangeNotifier {
   bool isTeaching = false;
   bool isRunning = false;
 
+  /// Teach the current slider values
   void teaching() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -33,13 +35,14 @@ class TeachingService with ChangeNotifier {
       );
       toggleTeaching();
       if (response.statusCode != 200) {
-        log.e("Error resetting teaching");
+        log.e("Error while teaching");
       }
     } catch (e) {
-      log.e("Error resetting teaching $e");
+      log.e("Error while teaching $e");
     }
   }
 
+  /// Run the teaching sequence
   void run() async {
     isRunning = true;
     notifyListeners();
@@ -75,6 +78,7 @@ class TeachingService with ChangeNotifier {
     }
   }
 
+  /// Reset the teaching sequence
   void reset() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -103,6 +107,7 @@ class TeachingService with ChangeNotifier {
     }
   }
 
+  // Run the example sequence
   void exampleSequence() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -131,6 +136,7 @@ class TeachingService with ChangeNotifier {
     }
   }
 
+  /// Toggle teaching state
   void toggleTeaching() {
     if (isTeaching) {
       isTeaching = false;

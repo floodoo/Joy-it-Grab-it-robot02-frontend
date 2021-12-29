@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// Dialog to change and svae the API endpoint
 class URLDialog extends StatefulHookWidget {
   const URLDialog({Key? key}) : super(key: key);
   static final routeName = (URLDialog).toString();

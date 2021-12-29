@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+/// This class is used to make the API requests to the server
 class Servo {
   Servo(this.id);
   final log = Logger();
@@ -10,6 +11,7 @@ class Servo {
 
   int id;
 
+  /// This method is used to get the current position of the servo
   Future<double> getPos() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -27,6 +29,7 @@ class Servo {
     }
   }
 
+  /// Sets the position of the servo to the given value
   void setPos(double pos) async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -49,7 +52,7 @@ class Servo {
       log.e("Error setting position $e");
     }
   }
-
+  /// Resets the servo to its default position
   void resetPos() {
     setPos(0.0);
   }

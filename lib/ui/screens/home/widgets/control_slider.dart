@@ -6,6 +6,7 @@ import 'package:logger/logger.dart';
 import 'package:robo_app/core/api/servo.dart';
 import 'package:robo_app/core/services/services.dart';
 
+/// Slider to control one servo
 class ControlSlider extends StatefulHookWidget {
   const ControlSlider({required this.id, required this.label, Key? key}) : super(key: key);
 
@@ -38,6 +39,7 @@ class _ControlSliderState extends State<ControlSlider> {
     int afterMovementMillisecondsSinceEpoch = 85;
     double lastSliderValue = 1.0;
 
+    // if teach mode is running, the slider positions should update every 500 milliseconds
     if (useProvider(teachingService).isRunning) {
       _log.d("Timer started");
       timer = Timer.periodic(const Duration(milliseconds: 500), (Timer t) {
