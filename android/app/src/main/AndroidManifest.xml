@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.joy_it_grab_it_robot02">
+   <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="Joy-it-Grab-it-robot02"
         android:icon="@mipmap/ic_launcher">
