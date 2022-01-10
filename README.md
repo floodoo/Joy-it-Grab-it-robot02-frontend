@@ -11,7 +11,7 @@ Follow the [server installation guide](https://github.com/floodoo/Joy-it-Grab-it
 Go to the [installation](installation_files/Joy-it-Grab-it-robot02.apk) folder and send the apk to your android phone. After that install the APK and launch it.
 
 #### iOS
-Unfortunately I can not build an iOS app, because the device must have a developer certificate. But you can do it. You have to install Flutter and then connect your phone to your computer/laptop. After that you can run the code and flutter is going to build the app on your device. One disadvantage is that if you don't have a developer certificate, you can only use the app when your phone is connected to your computer/laptop.
+Unfortunately I can not build an iOS app.
 
 ### Select your API endpoint
 Select your API endpoint in the settings page.
