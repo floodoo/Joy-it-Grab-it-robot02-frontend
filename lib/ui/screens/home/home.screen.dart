@@ -2,7 +2,6 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:robo_app/core/api/servo.dart';
@@ -105,22 +104,11 @@ class _HomeScreenState extends State<HomeScreen> {
         color: _theme.colors.accent,
 
         // Build for each servo a slider (if you have more than 6 servos, you can increase the itemCount number)
-        child: AnimationLimiter(
-          child: ListView.builder(
-            itemCount: 6,
-            itemBuilder: (BuildContext context, int index) {
-              return AnimationConfiguration.staggeredList(
-                position: index,
-                duration: const Duration(milliseconds: 375),
-                child: SlideAnimation(
-                  verticalOffset: 50.0,
-                  child: FadeInAnimation(
-                    child: ControlSlider(id: index, label: index.toString()),
-                  ),
-                ),
-              );
-            },
-          ),
+        child: ListView.builder(
+          itemCount: 6,
+          itemBuilder: (BuildContext context, int index) {
+            return ControlSlider(id: index, label: index.toString());
+          },
         ),
       ),
     );
